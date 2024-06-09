@@ -360,6 +360,8 @@
 
 #define FIRE_DMI (issmall(src) ? 'icons/mob/clothing/species/monkey/OnFire.dmi' : 'icons/mob/OnFire.dmi')
 
+///Define for spawning megafauna instead of a mob for cave gen
+#define SPAWN_MEGAFAUNA "bluh bluh huge boss"
 
 // Body position defines.
 /// Mob is standing up, usually associated with lying_angle value of 0.
@@ -369,7 +371,6 @@
 
 ///How much a mob's sprite should be moved when they're lying down
 #define PIXEL_Y_OFFSET_LYING -6
-
 
 // Slip flags, also known as lube flags
 /// The mob will not slip if they're walking intent
@@ -382,14 +383,10 @@
 /// [TRAIT_NO_SLIP_WATER] does not work on this slip. ONLY [TRAIT_NO_SLIP_ALL] will
 #define SLIP_IGNORE_NO_SLIP_WATER (1<<3)
 /// Slip works even if you're already on the ground
-///#define SLIP_WHEN_CRAWLING (1<<4)
+#define SLIP_WHEN_LYING (1<<4)
 /// the mob won't slip if the turf has the TRAIT_TURF_IGNORE_SLIPPERY trait.
-#define SLIPPERY_TURF (1<<4)
+#define SLIPPERY_TURF (1<<5)
 
 /// Possible value of [/atom/movable/buckle_lying]. If set to a different (positive-or-zero) value than this, the buckling thing will force a lying angle on the buckled.
 #define NO_BUCKLE_LYING -1
-
-// Return values for [/mob/living/proc/handle_ventcrawl()]
-#define VENTCRAWL_IN_SUCCESS 1
-#define VENTCRAWL_OUT_SUCCESS 2
 
